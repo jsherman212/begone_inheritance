@@ -119,17 +119,7 @@ static void remove_simulated_inheritance_field(char *line){
 }
 
 static void begone_simulated_inheritance(const simpleline_t &sl){
-    /* const char *tester = "\x01(0000000000000000\x01(0000000000000001  \x01(0000000000000005\x01\rv0\x02\r\x01(0000000000000003\x01\t->\x02\t\x01\t\x02\t\x01\tparent_a\x02\t \x01(0000000000000002\x01\t=\x02\t \x01(0000000000000006\x01 4\x02 \x01\t;\x02\t\x01(0000000000000001"; */
     char *line = (char *)&sl.line[0];
-
-    /* if(strlen(line) <= strlen(tester)) */
-    /*     return; */
-
-    /* qstrncpy(line, tester, strlen(tester)); */
-    /* line[strlen(tester)-1] = '\0'; */
-
-    /* return; */
-    const char *orig_line = line;
 
     while(*line){
         /* look for a '>' (var->f.f.x, var->f.x->f.f.y) and delete
@@ -221,5 +211,5 @@ plugin_t PLUGIN = {
     plugin_comment,
     "",
     "Begone Inheritance",
-    "",                     /* hotkey to run the plugin */
+    "",
 };
