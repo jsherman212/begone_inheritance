@@ -1,3 +1,14 @@
+struct r_parent {
+    int px;
+    int py;
+};
+
+struct r {
+    struct r_parent rp;
+    int x;
+    int y;
+};
+
 struct s_parent_parent {
     int pp_a;
     int pp_b;
@@ -7,6 +18,7 @@ struct s_parent {
     struct s_parent_parent spp;
     int parent_a;
     int parent_b;
+    struct r *r;
 };
 
 struct s {
@@ -23,6 +35,8 @@ static void func1(void){
     s->a = 4;
     s->b = 4;
     s->c = (void *)0x41414141;
+    s->sp.r->x = 99;
+    s->sp.r->rp.py = 11;
 }
 
 static void func2(void){

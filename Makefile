@@ -1,4 +1,4 @@
-PLUGIN=hexrays_begone_inheritance64
+PLUGIN=begone_inheritance64
 
 IDASDK=$(HOME)/idasdk75
 
